@@ -36,8 +36,35 @@ export const AboutSection: React.FC = () => {
     <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-gradient-to-b from-transparent via-[#08090d]/80 to-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Visual Column */}
+          <div className="lg:col-span-5 relative order-2 lg:order-1">
+            <div className="relative rounded-[2rem] overflow-hidden border border-gold-500/35 bg-[#0a0d12]/80 p-2 shadow-[0_0_35px_rgba(212,175,55,0.12)]">
+              <div className="relative overflow-hidden rounded-[1.5rem] bg-black">
+                <img
+                  src="/KALLIMATHA.jpeg"
+                  alt="Kallimatha Fireworks shop front"
+                  className="h-[420px] sm:h-[510px] w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+                <div className="absolute inset-x-0 bottom-0 p-5">
+                  <div className="rounded-2xl border border-gold-500/30 bg-black/55 backdrop-blur-md px-4 py-3 shadow-[0_0_20px_rgba(0,0,0,0.35)]">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-full bg-gold-400/15 border border-gold-400/30 text-gold-300">
+                        <Factory className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold-300">Our showroom</p>
+                        <p className="text-sm font-semibold text-white">Premium festive firework range</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Right Content Column */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 order-1 lg:order-2">
             <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full border border-gold-500/30 bg-black/50 mb-4 shadow-gold-sm">
               <Sparkles className="w-3.5 h-3.5 text-gold-400" />
               <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-300">

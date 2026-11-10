@@ -5,7 +5,7 @@ import { AboutSection } from './components/AboutSection';
 import { SafetyGuideSection } from './components/SafetyGuideSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { FireworksCanvas } from './components/FireworksCanvas';
 
 export function App() {
   const scrollToCategories = () => {
@@ -15,6 +15,8 @@ export function App() {
 
   return (
     <div className="relative min-h-screen bg-[#030305] text-[#e8e4dc] selection:bg-[#d4af37] selection:text-black">
+      <FireworksCanvas interactive={false} density="subtle" />
+
       {/* Main Content Layout */}
       <div className="relative z-10">
         <main>
@@ -38,9 +40,6 @@ export function App() {
 
         {/* Footer */}
         <Footer />
-
-        {/* Floating WhatsApp Quick Action Button */}
-        <FloatingWhatsApp />
       </div>
     </div>
   );
