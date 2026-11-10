@@ -36,41 +36,6 @@ export const AboutSection: React.FC = () => {
     <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-gradient-to-b from-transparent via-[#08090d]/80 to-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Visual Column */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-gold-500/30 p-2 bg-gradient-to-br from-gold-500/20 via-black to-gold-900/30 shadow-gold-md">
-              <div className="relative rounded-2xl overflow-hidden h-[420px] sm:h-[480px]">
-                <img
-                  src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1000&q=80"
-                  alt="Kallimatha Fireworks Craftsmanship"
-                  className="w-full h-full object-cover filter brightness-90 hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-
-                {/* Floating badge inside image */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-md border border-gold-500/30">
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2.5 rounded-full bg-gold-400/20 border border-gold-400/40 text-gold-400">
-                      <Factory className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-white tracking-wide">
-                        Master Artisanship
-                      </h4>
-                      <p className="text-[11px] text-zinc-300">
-                        Crafting light, wonder, and celebration since decades
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Accent Glowing Orb */}
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[radial-gradient(circle,rgba(212,175,55,0.25)_0%,transparent_70%)] rounded-full pointer-events-none" />
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[radial-gradient(circle,rgba(217,119,6,0.25)_0%,transparent_70%)] rounded-full pointer-events-none" />
-          </div>
-
           {/* Right Content Column */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full border border-gold-500/30 bg-black/50 mb-4 shadow-gold-sm">

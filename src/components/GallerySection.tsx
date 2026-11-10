@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Eye, X, Flame, Camera, ArrowUpRight } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
+import { Eye, X, Camera } from 'lucide-react';
 import { GALLERY_ITEMS } from '../data/products';
 import { GalleryItem } from '../types';
 
-interface GallerySectionProps {
-  onTriggerFireworkEffect?: (effectName: string) => void;
-}
-
-export const GallerySection: React.FC<GallerySectionProps> = ({ onTriggerFireworkEffect }) => {
+export const GallerySection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
 
@@ -17,14 +13,6 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onTriggerFirewor
   const filteredItems = activeFilter === 'All'
     ? GALLERY_ITEMS
     : GALLERY_ITEMS.filter((item) => item.category === activeFilter);
-
-  const fireworksEffects = [
-    { name: 'Golden Willow', color: 'from-amber-400 to-yellow-600', icon: '✨' },
-    { name: 'Ruby Peony', color: 'from-rose-500 to-red-700', icon: '🎆' },
-    { name: 'Silver Crackle', color: 'from-slate-200 to-zinc-400', icon: '⚡' },
-    { name: 'Emerald Crown', color: 'from-emerald-400 to-teal-600', icon: '👑' },
-    { name: 'Titanium Comet', color: 'from-cyan-400 to-blue-600', icon: '🚀' },
-  ];
 
   return (
     <section id="gallery" className="relative py-24 px-4 sm:px-6 lg:px-8 z-10">
@@ -45,37 +33,6 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onTriggerFirewor
           <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
             Witness the awe and splendour created by Kallimatha Fireworks across festive Diwali nights, grand weddings, and joyous family celebrations.
           </p>
-        </div>
-
-        {/* Interactive Sky Show Pad */}
-        <div className="mb-12 p-5 sm:p-6 rounded-2xl bg-black/60 border border-gold-500/30 backdrop-blur-md shadow-gold-sm text-center">
-          <div className="flex items-center justify-center space-x-2 mb-2">
-            <Flame className="w-4 h-4 text-amber-400 animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-widest text-gold-300">
-              Interactive Pyrotechnic Launcher Pad
-            </span>
-          </div>
-          <p className="text-xs text-zinc-400 max-w-xl mx-auto mb-4">
-            Click any effect below to ignite a signature sky burst in real-time across your screen!
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
-            {fireworksEffects.map((eff) => (
-              <button
-                key={eff.name}
-                type="button"
-                onClick={() => {
-                  if (onTriggerFireworkEffect) {
-                    onTriggerFireworkEffect(eff.name);
-                  }
-                }}
-                className="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-black/80 to-zinc-900 border border-gold-500/30 hover:border-gold-400 flex items-center space-x-2 hover:scale-105 active:scale-95 transition-all shadow-sm hover:shadow-gold-sm cursor-pointer"
-              >
-                <span>{eff.icon}</span>
-                <span>{eff.name}</span>
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Gallery Filter Tabs */}

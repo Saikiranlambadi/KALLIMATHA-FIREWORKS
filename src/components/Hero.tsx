@@ -1,21 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, MessageCircle, ArrowRight, ShieldCheck, Award, Zap, Flame } from 'lucide-react';
+import { Sparkles, MessageCircle, ArrowRight, ShieldCheck, Award, Zap } from 'lucide-react';
 import { WHATSAPP_DISPLAY, generateWhatsAppLink } from '../data/products';
 
 interface HeroProps {
   onExploreClick: () => void;
-  onIgniteClick: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onExploreClick, onIgniteClick }) => {
+export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
   const handleWhatsAppEnquiry = () => {
     const msg = `Hello Kallimatha Fireworks! 🎆\n\nI would like to enquire about your luxury fireworks collection and receive your complete festive catalogue & pricing.`;
-    window.open(generateWhatsAppLink(msg), '_blank');
-  };
-
-  const handlePriceListRequest = () => {
-    const msg = `Hello Kallimatha Fireworks! 🎆\n\nPlease share the official 2026 festive price list & special booking offers.`;
     window.open(generateWhatsAppLink(msg), '_blank');
   };
 
@@ -110,15 +104,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onIgniteClick }) => 
             <span>Order on WhatsApp</span>
           </button>
 
-          <button
-            onClick={onIgniteClick}
-            type="button"
-            className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-gradient-to-r from-red-600/30 to-amber-600/30 border border-red-500/40 text-amber-200 hover:text-white text-sm font-bold uppercase tracking-wider flex items-center justify-center space-x-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
-            title="Ignite interactive fireworks now!"
-          >
-            <Flame className="w-4 h-4 text-amber-400 animate-pulse" />
-            <span>Ignite Fireworks</span>
-          </button>
         </motion.div>
 
         {/* Feature Badges Grid */}
